@@ -1,0 +1,10 @@
+For google.com, hops 5-10 are a lot slower than the hops before them, of which were less than 10ms
+Also, from hops 11-19, there were errors in returning a response from a hop. This could be due to packet loss or Timeouts, as shown in the trace it being a timeout issue. 
+
+
+For github.com, there were some errors in returning a response from a hop, as shown in the trace in the terminal: hops 6-11. As mentioned before this is due to timeout issues. 
+Furthermore, there was slighlty higher latency in hops 5 and 12, both being above 45ms on average. 
+
+For bbc.co.uk, there aren't that many issues, as only hop 5 had a timeout error. 
+Also, only hop 6 had a higher average latency showing that there aren't many slow points in the network path for this domain.
+

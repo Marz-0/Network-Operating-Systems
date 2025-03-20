@@ -1,0 +1,20 @@
+#this exercise takes a while to process in the terminal, but after a while it will show the output of the tracert command
+
+
+import subprocess
+
+def tracert(domain):
+    try:
+        result = subprocess.run(["tracert", domain], capture_output=True, text=True)
+        print(result.stdout)
+    except FileNotFoundError:
+        print("tracert command not found. Make sure it's available.")
+    except Exception as e:  # Catching general exceptions
+        print(f"An error occurred: {e}")
+
+# Example usage
+if __name__ == "__main__":
+    domains = ["google.com", "github.com", "bbc.co.uk"] 
+    for domain in domains:
+        print(f"Traceroute for {domain}:")
+        tracert(domain)
